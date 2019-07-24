@@ -112,19 +112,9 @@ Button.defaultProps = {
   variant: 'primary'
 }
 
-Button.props = {
+Button.propTypes = {
   variant: PropTypes.oneOf(['primary', 'outline', 'transparent']),
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  ariaLabel: PropTypes.string.isRequired,
-  styles: {
-    button: {
-      backgroundColor: PropTypes.string,
-      hoverColor: PropTypes.string,
-      borderColor: PropTypes.string
-    },
-    label: {
-      textColor: PropTypes.string
-    }
-  }
+  ariaLabel: PropTypes.string.isRequired
 }

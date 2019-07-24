@@ -1,9 +1,12 @@
 .storybook
 node_modules/
 src/
+.DS_Store
 .gitignore
 .npmignore
 .babelrc
-.rollup.config.js
+rollup.config.js
 yarn.lock
 yarn-error.log
+.vscode/
+*.tgz

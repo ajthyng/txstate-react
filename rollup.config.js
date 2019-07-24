@@ -1,21 +1,22 @@
 import { uglify } from 'rollup-plugin-uglify'
-import babel from 'rollup-plugin-babel' 
+import babel from 'rollup-plugin-babel'
 
 const config = {
   input: 'src/components/index.js',
-  external: ['react', 'prop-types', 'styled-components'],
+  external: ['react', 'prop-types', 'styled-components', 'color'],
   output: {
     format: 'umd',
     name: 'txstate-react',
     globals: {
       react: 'React',
       'prop-types': 'PropTypes',
-      'styled-components': 'styled'
+      'styled-components': 'styled',
+      color: 'Color'
     }
   },
   plugins: [
     babel({
-      exclude: ["node_modules/**", "src/stories/**"]
+      exclude: ['node_modules/**', 'src/stories/**']
     }),
     uglify()
   ]

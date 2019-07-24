@@ -48,7 +48,7 @@ export const Stack = props => {
   )
 }
 
-Stack.props = {
+Stack.propTypes = {
   verticalAlign: PropTypes.oneOf(['start', 'center', 'end', 'even', 'between']),
   horizontalAlign: PropTypes.oneOf([
     'start',
