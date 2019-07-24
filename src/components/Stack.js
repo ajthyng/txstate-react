@@ -67,5 +67,5 @@ Stack.defaultProps = {
   verticalAlign: 'flex-start',
   horizontalAlign: 'flex-start',
   horizontal: false,
-  as: 'div'
+  renderAs: 'div'
 }

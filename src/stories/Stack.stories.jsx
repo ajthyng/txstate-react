@@ -1,18 +1,18 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-
 import { Stack, Button } from '../components'
 import styled from 'styled-components'
+import { defaultTheme } from '../theme/Theme'
 
 const Box = styled.div`
   width: 100px;
   height: 100px;
-  background-color: ${({ theme }) => theme.maroon.hex()};
+  background-color: ${defaultTheme.maroon};
 `
 
 const SandstoneStack = styled(Stack)`
-  background-color: ${({ theme }) => theme.sandstone.hex()};
+  background-color: ${defaultTheme.sandstone};
   border: solid 2px #303030;
 `
 

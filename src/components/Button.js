@@ -1,51 +1,108 @@
 import React from 'react'
 import styled from 'styled-components'
+import Color from 'color'
 import PropTypes from 'prop-types'
 import { Text } from './Text'
+import { defaultTheme } from '../theme/Theme'
 
 const ButtonBase = styled.div`
   width: fit-content;
-  padding: 12px;
-  border-radius: 3px;
-  box-shadow: 1px 2px 3px #A0A0A0;
+  padding: 1rem 2rem; 
+  border-radius: 2px;
   cursor: pointer;
+  transition: all 200ms ease;
+
+  &:hover {
+    transform: translate(0px, -3px);
+  }
 `
 
 const ButtonPrimaryContainer = styled(ButtonBase)`
-  background-color: ${({ theme }) => theme.maroon.hex()};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.maroon.lighten(0.3).toString()};
-  }
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
 const ButtonOutlineContainer = styled(ButtonBase)`
-  border: 2px solid ${({ theme }) => theme.maroon.hex()};
-  background-color: ${({ theme }) => theme.white.hex()};
+  border: 1px solid ${({ borderColor }) => borderColor};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 10px;
 
   &:hover {
-    border: 2px solid ${({ theme }) => theme.maroon.lighten(0.3).toString()};
+    box-shadow: inset 0 -2px 0 0;
+    border: 1px solid ${({ borderColor }) => borderColor};
   }
 `
 
-const ButtonLabel = styled(Text)`
-  user-select: none;
-  color: ${({ theme, variant }) => variant === 'primary' ? theme.white.hex() : theme.maroon.hex()};
+const ButtonTransparentOutlineContainer = styled(ButtonOutlineContainer)`
+  background-color: transparent;
 `
 
+const ButtonVariants = {
+  primary: ButtonPrimaryContainer,
+  outline: ButtonOutlineContainer,
+  transparent: ButtonTransparentOutlineContainer
+}
+
+const ButtonLabel = styled(Text)`
+  user-select: none;
+  color: ${({ textColor }) => textColor};
+
+  ${ButtonBase}:hover {
+    color: ${({ hoverTextColor }) => hoverTextColor};
+  }
+`
+
+const buttonStyles = {
+  primary: {
+    button: {
+      backgroundColor: defaultTheme.maroon,
+      hoverColor: Color(defaultTheme.maroon).lighten(0.2).string()
+    },
+    label: {
+      textColor: defaultTheme.white,
+      hoverTextColor: defaultTheme.white
+    }
+  },
+  outline: {
+    button: {
+      backgroundColor: defaultTheme.white,
+      borderColor: defaultTheme.maroon
+    },
+    label: {
+      textColor: defaultTheme.maroon,
+      hoverTextColor: defaultTheme.maroon
+    }
+  },
+  transparent: {
+    button: {
+      backgroundColor: defaultTheme.transparent,
+      borderColor: defaultTheme.maroon
+    },
+    label: {
+      textColor: defaultTheme.maroon,
+      hoverTextColor: defaultTheme.maroon
+    }
+  }
+}
+
 export const Button = props => {
-  const { label, variant, className, onClick, ariaLabel } = props
-  const ButtonContainer = variant === 'primary' ? ButtonPrimaryContainer : ButtonOutlineContainer
-  console.log('ACTIVE: ',document.activeElement)
+  const { label, variant, onClick, ariaLabel } = props
+  const ButtonContainer = ButtonVariants[variant]
+
+  const style = buttonStyles[variant]
+
   return (
     <ButtonContainer
       role='button'
       aria-label={ariaLabel}
-      className={className}
       onClick={onClick}
+      {...style.button}
     >
-      <ButtonLabel variant={variant}>{label}</ButtonLabel>
+      <ButtonLabel
+        variant={variant}
+        {...style.label}
+      >
+        {label}
+      </ButtonLabel>
     </ButtonContainer>
   )
 }
@@ -56,8 +113,18 @@ Button.defaultProps = {
 }
 
 Button.props = {
-  variant: PropTypes.oneOf(['primary', 'outline']),
+  variant: PropTypes.oneOf(['primary', 'outline', 'transparent']),
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  ariaLabel: PropTypes.string.isRequired
+  ariaLabel: PropTypes.string.isRequired,
+  styles: {
+    button: {
+      backgroundColor: PropTypes.string,
+      hoverColor: PropTypes.string,
+      borderColor: PropTypes.string
+    },
+    label: {
+      textColor: PropTypes.string
+    }
+  }
 }

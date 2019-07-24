@@ -8,10 +8,6 @@ function loadStories() {
   require('../src/stories');
 }
 
-addDecorator(storyFn => {
-  return <ThemeProvider theme={defaultTheme}>{storyFn()}</ThemeProvider>
-})
-
 addDecorator(withA11y)
 
 configure(loadStories, module);
