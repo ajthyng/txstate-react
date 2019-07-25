@@ -1,5 +1,3 @@
-import Color from 'color'
-
 export const defaultTheme = {
   maroon: '#501214',
   gold: '#6a5638',

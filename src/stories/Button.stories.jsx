@@ -24,21 +24,3 @@ storiesOf('Button', module)
       </Container>
     )
   })
-  .add('primary, override style', () => {
-    return (
-      <Button
-        label='Styled Primary'
-        onClick={action('click')}
-        styles={{
-          button: {
-            backgroundColor: '#363534',
-            hoverColor: 'hotpink'
-          },
-          label: {
-            textColor: 'white',
-            hoverTextColor: 'green'
-          }
-        }}
-      />
-    )
-  })

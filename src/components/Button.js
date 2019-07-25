@@ -24,10 +24,10 @@ const ButtonPrimaryContainer = styled(ButtonBase)`
 const ButtonOutlineContainer = styled(ButtonBase)`
   border: 1px solid ${({ borderColor }) => borderColor};
   background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: 10px;
+  padding: 1rem 2rem;
 
   &:hover {
-    box-shadow: inset 0 -2px 0 0;
+    box-shadow: inset 0 -2px 0 0 ${({ borderColor }) => borderColor};
     border: 1px solid ${({ borderColor }) => borderColor};
   }
 `

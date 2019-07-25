@@ -16,8 +16,8 @@ const SandstoneStack = styled(Stack)`
   border: solid 2px #303030;
 `
 
-storiesOf('Stack', module)
-  .add('Horizontal, start aligned', () => {
+storiesOf('Stack/Horizontal', module)
+  .add('start aligned', () => {
     return (
       <SandstoneStack
         horizontal
@@ -32,7 +32,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, center aligned', () => {
+  .add('center aligned', () => {
     return (
       <SandstoneStack
         horizontal
@@ -48,7 +48,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, end aligned', () => {
+  .add('end aligned', () => {
     return (
       <SandstoneStack
         horizontal
@@ -64,7 +64,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, evenly aligned', () => {
+  .add('evenly aligned', () => {
     return (
       <SandstoneStack
         horizontal
@@ -80,7 +80,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, spaced around', () => {
+  .add('spaced around', () => {
     return (
       <SandstoneStack
         horizontal
@@ -96,7 +96,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, spaced between', () => {
+  .add('spaced between', () => {
     return (
       <SandstoneStack
         horizontal
@@ -112,7 +112,7 @@ storiesOf('Stack', module)
       </SandstoneStack>
     )
   })
-  .add('Horizontal, evenly with buttons', () => {
+  .add('evenly with buttons', () => {
     return (
       <SandstoneStack
         horizontal
@@ -126,5 +126,123 @@ storiesOf('Stack', module)
         <Button label='END' variant='outline' onClick={action('click')} />
         <Button label='VERY END' onClick={action('click')} />
       </SandstoneStack>
+    )
+  })
+
+const VerticalSandstoneStack = styled(SandstoneStack)`
+  height: 800px;
+`
+
+storiesOf('Stack/Vertical', module)
+  .add('start aligned', () => {
+    return (
+      <VerticalSandstoneStack
+        renderAs='div'
+        horizontalAlign='center'
+        verticalAlign='start'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('center aligned', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='center'
+        renderAs='div'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('end aligned', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='end'
+        renderAs='div'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('evenly aligned', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='even'
+        renderAs='div'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('spaced around', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='around'
+        renderAs='div'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('spaced between', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='between'
+        renderAs='div'
+        spacing={4}
+      >
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </VerticalSandstoneStack>
+    )
+  })
+  .add('evenly with buttons', () => {
+    return (
+      <VerticalSandstoneStack
+        horizontalAlign='center'
+        verticalAlign='even'
+        renderAs='div'
+        spacing={4}
+      >
+        <Button label='SUPER START' onClick={action('click')} />
+        <Button label='START' variant='outline' onClick={action('click')} />
+        <Button label='CENTER' onClick={action('click')} />
+        <Button label='END' variant='outline' onClick={action('click')} />
+        <Button label='VERY END' onClick={action('click')} />
+      </VerticalSandstoneStack>
     )
   })
