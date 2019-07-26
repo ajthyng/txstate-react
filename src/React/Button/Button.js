@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Color from 'color'
 import PropTypes from 'prop-types'
-import { Text } from './Text'
-import { defaultTheme } from '../theme/Theme'
+import { Text } from '../Text'
+import { Theme } from '../Theme'
 
 const ButtonBase = styled.div`
   width: fit-content;
@@ -54,32 +54,32 @@ const ButtonLabel = styled(Text)`
 const buttonStyles = {
   primary: {
     button: {
-      backgroundColor: defaultTheme.maroon,
-      hoverColor: Color(defaultTheme.maroon).lighten(0.2).string()
+      backgroundColor: Theme.maroon,
+      hoverColor: Color(Theme.maroon).lighten(0.2).string()
     },
     label: {
-      textColor: defaultTheme.white,
-      hoverTextColor: defaultTheme.white
+      textColor: Theme.white,
+      hoverTextColor: Theme.white
     }
   },
   outline: {
     button: {
-      backgroundColor: defaultTheme.white,
-      borderColor: defaultTheme.maroon
+      backgroundColor: Theme.white,
+      borderColor: Theme.maroon
     },
     label: {
-      textColor: defaultTheme.maroon,
-      hoverTextColor: defaultTheme.maroon
+      textColor: Theme.maroon,
+      hoverTextColor: Theme.maroon
     }
   },
   transparent: {
     button: {
-      backgroundColor: defaultTheme.transparent,
-      borderColor: defaultTheme.maroon
+      backgroundColor: Theme.transparent,
+      borderColor: Theme.maroon
     },
     label: {
-      textColor: defaultTheme.maroon,
-      hoverTextColor: defaultTheme.maroon
+      textColor: Theme.maroon,
+      hoverTextColor: Theme.maroon
     }
   }
 }

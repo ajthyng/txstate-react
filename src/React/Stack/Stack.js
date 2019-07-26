@@ -60,7 +60,7 @@ Stack.propTypes = {
   ]),
   horizontal: PropTypes.bool,
   spacing: PropTypes.number,
-  as: PropTypes.oneOf([PropTypes.string, PropTypes.element])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 }
 
 Stack.defaultProps = {
