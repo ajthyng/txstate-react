@@ -1,6 +1,7 @@
 {
   "name": "txstate-react",
   "version": "0.2.0",
+  "homepage": "https://ajthyng.github.io/txstate-react/",
   "repository": {
     "url": "https://github.com/ajthyng/txstate-react"
   },
@@ -13,6 +14,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "build": "rm -rf lib/ && npx babel src/React/ -d lib --copy-files",
     "storybook": "start-storybook -p 9009 -s public",

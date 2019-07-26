@@ -35,6 +35,8 @@ If you've added a new component the major version should be incremented.
 #### Major (X.0.0)
 If you've changed the way a component is used increment the major version and explain to the rest of the team why this change is needed (cookies help).
 
+> **The easiest way to communicate changes is to _update CHANGELOG.md_**
+
 #### Location
 The version number is in `package.json`
 
