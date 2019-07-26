@@ -23,7 +23,6 @@ const getData = async (dataSource, dispatch) => {
   try {
     dispatch({ type: 'loadingItems' })
     const data = await (dataSource && dataSource())
-    await new Promise(resolve => setTimeout(resolve, 2000))
     dispatch({ type: 'updateItems', items: data })
   } catch (err) {
     console.error(err)
@@ -32,7 +31,7 @@ const getData = async (dataSource, dispatch) => {
 }
 
 export const List = props => {
-  const { dataSource, columns } = props
+  const { dataSource, columns, loadingLines } = props
 
   const [state, dispatch] = useReducer(listReducer, {
     items: [],
@@ -47,7 +46,7 @@ export const List = props => {
   return (
     <ShimmeredDetailsList
       enableShimmer={state.loading}
-      shimmerLines={20}
+      shimmerLines={loadingLines}
       items={state.items}
       columns={state.columns}
     />

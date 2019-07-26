@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { Button, Stack, Theme } from '../React'
+import { Stack, Button, Theme } from '../React'
 import styled from 'styled-components'
 
 const Container = styled(Stack)`
@@ -19,7 +19,12 @@ storiesOf('Button', module)
         horizontalAlign='center'
         spacing={8}
       >
-        <Button variant='transparent' label='Transparent Button' onClick={action('click')} />
+        <Button
+          label='Transparent'
+          ariaLabel='Transparent'
+          variant='transparent'
+          onClick={action('click')}
+        />
       </Container>
     )
   })

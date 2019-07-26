@@ -1,4 +1,4 @@
-const Theme = {
+export const Theme = {
   maroon: '#501214',
   gold: '#6a5638',
   charcoal: '#363534',
@@ -12,5 +12,3 @@ const Theme = {
   lightGray: '#d8d8d8',
   white: '#FFF'
 }
-
-export { Theme }
