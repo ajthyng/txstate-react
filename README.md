@@ -16,7 +16,7 @@ Adding A Component (React)
 
 Using Storybook to Develop
 ---
-If your component is all set up and you want to start using it in storybook you need to add at least one story to use it.
+Storybook is a framework that allows us to develop components in an isolated environment. It acts as a living set of documentation and is extremely useful for development since you don't have to link this library with another project in order to develop with it. When you've written your component and ready to test it using Storybook, do the following:
 
 1. Add a file to `src/stories` called `MyComponent.stories.jsx`
 2. Add an entry to `src/stories/index.js` to import your component's stories.
