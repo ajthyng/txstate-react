@@ -14,7 +14,7 @@
     "react-dom": "^16.8.6"
   },
   "scripts": {
-    "build": "npx babel src/React/ -d lib --copy-files",
+    "build": "rm -rf lib/ && npx babel src/React/ -d lib --copy-files",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },

@@ -1,7 +1,8 @@
 Local Development Server
 ---
-1. Run `yarn` or `npm install`
-1. To start the development environment run `yarn storybook` or `npm run storybook`
+Run this command:
+> `docker-compose up --build`
+
 
 Adding A Component (React)
 ---
